@@ -1,7 +1,8 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { useTheme } from "styled-components";
 import { Link as LinkR } from "react-router-dom";
 import { DiCssdeck} from "react-icons/di";
+import { FaBars } from "react-icons/fa";
 
 
 export const Nav = styled.div`
@@ -72,7 +73,6 @@ export const NavLink = styled.a`
     }
 `;
 
-
 export const GitHubButton = styled.a`
   border: 1.8px solid ${({ theme }) => theme.primary};
   justify-content: center;
@@ -120,7 +120,8 @@ export const MobileIcon = styled.div`
     cursor: pointer;
     color: ${({ theme }) => theme.text_primary};
   }
-`
+`;
+
 export const Span = styled.div`
 
   padding: 0 4px;
@@ -128,8 +129,43 @@ export const Span = styled.div`
   font-size: 18px;
 
 `;
+export const MobileMenu = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+  position: absolute;
+  top: 80px;
+  right: 0;
+  width: 100%;
+  padding: 12px 40px 24px 40px;
+  background: ${({ theme }) => theme.card_light+99};
+  transition: all 0.6s ease-in-out;
+  transform: ${({ open }) => (open ? 'translateY(0)' : 'translateY(-100%)')};
+  border-radius: 0 0 20px 20px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  opacity: ${({ open }) => (open ? '100%' : '0')};
+  z-index: ${({ open }) => (open ? '1000' : '-1000')};
+
+`
+
+const MobileMenuLinks = styled(LinkR)`
+  color: ${({ theme }) => theme.text_primary};
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    color: ${({ theme }) => theme.primary};
+  }
+  &.active {
+    border-bottom: 2px solid ${({ theme }) => theme.primary};
+  }
+`;
 
 const Navbar = () => {
+    const [open, setOpen] = React.useState(false);
+    const theme = useTheme();
     return (
         <Nav>
             <NavContainer>
@@ -146,7 +182,13 @@ const Navbar = () => {
                     <DiCssdeck size = "3rem" /> <Span>Portfolio</Span>
                   </a>
                 </NavLogo>
-                <MobileIcon></MobileIcon>
+                <MobileIcon>
+                  <FaBars 
+                    onClick = {() => {
+                      setOpen(!open);
+                    }}
+                  />
+                </MobileIcon>
                 <NavItems>
                     <NavLink href="#about">Sobre</NavLink>
                     <NavLink href="#skills">Habilidades</NavLink>
@@ -158,6 +200,69 @@ const Navbar = () => {
                     <GitHubButton>Perfil do Github</GitHubButton>
                 </ButtonContainer>
             </NavContainer>
+            {
+              open && <MobileMenu open={open}>
+                Sobre
+                <MobileMenuLinks
+                  href="#about" 
+                  onClick={() => {
+                    setOpen(!open);
+                  }}
+                > 
+                </MobileMenuLinks>
+
+                Habilidades
+                <MobileMenuLinks
+                  href="#skills" 
+                  onClick={() => {
+                    setOpen(!open);
+                  }}
+                > 
+                </MobileMenuLinks>
+
+                Experiência
+                <MobileMenuLinks
+                  href="#experience" 
+                  onClick={() => {
+                    setOpen(!open);
+                  }}
+                > 
+                </MobileMenuLinks>
+
+                Projetos
+                <MobileMenuLinks
+                  href="#projects" 
+                  onClick={() => {
+                    setOpen(!open);
+                  }}
+                > 
+                </MobileMenuLinks>
+
+                Educação
+                <MobileMenuLinks
+                  href="#education" 
+                  onClick={() => {
+                    setOpen(!open);
+                  }}
+                > 
+                </MobileMenuLinks>
+                <GitHubButton 
+                  style = {{
+                    padding: "10 16px",
+                    background: `${theme.primary}`,
+                    color: "white",
+                    width: "max-content",
+                  }}
+                  href = "/"
+                  target = "_blank" 
+                
+                >
+
+                </GitHubButton>
+
+              </MobileMenu>
+
+            }
      </Nav>
     );
 };
