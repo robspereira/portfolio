@@ -6,6 +6,7 @@ import Skills from "./components/SkillsSection";
 import Hero from "./components/HeroSection";
 import Educacao from "./components/Educacao";
 import { BrowserRouter as Router } from "react-router-dom";
+import Experiencia from './components/Experiencia';
 
 
 const Body = styled.div`
@@ -32,6 +33,7 @@ function App() {
           <Hero />
             <Wrapper>
               <Skills />
+              <Experiencia />
               <Educacao />
             </Wrapper>
          </Body>
