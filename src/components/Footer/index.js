@@ -1,8 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import { Bio } from "../../data/consts";
-import FacebookIcon from "@mui/icons-material/Facebook";
-import TwitterIcon from "@mui/icons-material/Twitter";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
 
@@ -90,19 +88,13 @@ const Footer = () => {
       <FooterWrapper>
         <Logo>Roberto Lucas</Logo>
         <Nav>
-          <NavLink href="#About">About</NavLink>
-          <NavLink href="#Skills">Skills</NavLink>
-          <NavLink href="#Experience">Experience</NavLink>
-          <NavLink href="#Projects">Projects</NavLink>
-          <NavLink href="#Education">Education</NavLink>
+          <NavLink href="#About">Sobre</NavLink>
+          <NavLink href="#Skills">Habilidades</NavLink>
+          <NavLink href="#Experience">Experiências</NavLink>
+          <NavLink href="#Projects">Projetos</NavLink>
+          <NavLink href="#Education">Educação</NavLink>
         </Nav>
         <SocialMediaIcons>
-          <SocialMediaIcon href={Bio.facebook} target="display">
-            <FacebookIcon />
-          </SocialMediaIcon>
-          <SocialMediaIcon href={Bio.twitter} target="display">
-            <TwitterIcon />
-          </SocialMediaIcon>
           <SocialMediaIcon href={Bio.linkedin} target="display">
             <LinkedInIcon />
           </SocialMediaIcon>

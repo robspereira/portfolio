@@ -96,7 +96,7 @@ export const skills = [
     ],
   },
   {
-    title: "Others",
+    title: "Outros",
     skills: [
       {
         name: "Git",
