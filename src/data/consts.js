@@ -160,8 +160,29 @@ export const experiences = [
       "CSS",
       "JavaScript",
     ],
-    // doc: "https://firebasestorage.googleapis.com/v0/b/flexi-coding.appspot.com/o/Screenshot%20from%202024-01-25%2022-38-31.png?alt=media&token=2785903f-1a4e-41f5-afd2-6adcfe56d058",
+  },
+  {
+    id: 1,
+    img: "https://nerdin.com.br/img/empresa/1208.png",
+    role: "Bootcamp Excelência em Full Stack",
+    company: "SysMap Solutions",
+    date: "Abril de 2024 - Maio de 2024",
+    desc: "Aprendizado em desenvolvimento full-stack com aulas diárias e realizações de projetos. Desenvolvimento back-end com Java e Spring Boot com autenticação, validação, segurança, banco de dados, integração da API do spotify, Mensageria e docker. Criação do front-end com React.JS e Tailwind, autenticação, validações, feedback com Toastify, React Hooks.",
+    skills: [
+      "Java",
+      "Spring Boot",
+      "React",
+      "TailwindCSS",
+      "PostgreSQL",
+      "Spring Security",
+      "RabbitMQ",
+      "Docker",
+      "React Hooks",
+      "Integração de APIs",
+    ],
+    certification: "https://training.sysmap.com.br/certificates/9e9eedd2-5e49-44ae-841a-7a80c1567bda",
   }
+
 ];
 
 export const education = [

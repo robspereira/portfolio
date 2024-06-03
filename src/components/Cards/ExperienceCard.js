@@ -121,6 +121,41 @@ const Skill = styled.div`
     }
 `;
 
+export const CertificationButtonContainer = styled.div`
+  width: 100%;
+  margin-top: 10px;  
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 6px;
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+`;
+
+export const CertificationButton = styled.a`
+  border: 1.8px solid ${({ theme }) => theme.primary};
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  height: 80%;
+  border-radius: 20px;
+  background: ${({ theme }) => theme.primary};
+  color: ${({ theme }) => theme.white}; 
+  cursor: pointer;
+  padding: 10px 20px;
+  font-weight: 500;
+  text-decoration: none;
+  font-size: 16px;
+  transition: all 0.6s ease-in-out;
+    :hover {
+      background: ${({ theme }) => theme.secondary};
+    }
+    @media screen and (max-width: 768px) { 
+    font-size: 14px;
+    }
+`;
+
 const ExperienceCard = ({ experience }) => {
   return (
         <Card>
@@ -145,6 +180,14 @@ const ExperienceCard = ({ experience }) => {
                     </ItemWrapper>
                 </Skills>
             </>}
+            {experience?.certification &&
+            <>
+            <CertificationButtonContainer>
+                <CertificationButton href="https://training.sysmap.com.br/certificates/9e9eedd2-5e49-44ae-841a-7a80c1567bda" target="_blank">Ver Certificado</CertificationButton>
+            </CertificationButtonContainer>
+
+            </>
+            }
             </Description>
         </Card>
   )

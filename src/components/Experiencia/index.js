@@ -8,6 +8,7 @@ import TimelineContent from '@mui/lab/TimelineContent';
 import TimelineDot from '@mui/lab/TimelineDot';
 import { experiences } from "../../data/consts";
 import ExperienceCard from "../Cards/ExperienceCard";
+import { ButtonContainer, GitHubButton } from "../Navbar";
 
 const Container = styled.div`
   display: flex;
